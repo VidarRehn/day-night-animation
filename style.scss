@@ -1,0 +1,62 @@
+
+body {
+    overflow: hidden;
+    height: 100vh;
+
+    .wrapper {
+        height: 500px;
+        width: 500px;
+        border: 2px solid black;
+        background-color: rgb(39, 16, 53);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        animation: night-day 10s infinite linear;
+
+        .ground {
+            height: 300px;
+            background-color: green;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .sun {
+            background-color: rgb(255, 102, 0);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px white;
+            animation: move-sun 10s infinite linear;
+            position: absolute;
+        }
+
+        .moon {
+            background-color: rgb(241, 241, 200);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px white;
+            animation: move-moon 10s infinite linear;
+            position: absolute;
+        }
+
+        @keyframes move-sun {
+            0% {transform: rotate(0deg) translateY(200px) rotate(0deg);}
+            50% {background-color: yellow;}
+            100% {transform: rotate(360deg) translateY(200px) rotate(-360deg)};
+        }
+
+        @keyframes move-moon {
+            0% {transform: rotate(0deg) translateY(-200px) rotate(0deg);}
+            50% {background-color: gray;}
+            100% {transform: rotate(360deg) translateY(-200px) rotate(360deg)};
+        }
+
+        @keyframes night-day {
+            50% {background-color: rgb(192, 227, 238);}
+        }
+    }
+}
